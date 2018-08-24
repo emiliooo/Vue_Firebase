@@ -37,12 +37,11 @@
         var connectDB = db;
         connectDB.collection('employees').get().then( res => {
           res.forEach( doc => {
-
             const data = {
                 'id': doc.id,
                 'employee_id' : doc.data().employee_id,
                 'name' :doc.data().name,
-               'dept' :doc.data().dept
+                'dept' :doc.data().dept
               };
               this.employees.push(data)
              })

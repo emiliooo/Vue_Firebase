@@ -2,6 +2,15 @@
   <div id="view-employee">
     <ul class="collection with-header">
       <li class="collection-header">
+        <h4>{{employee_id}}</h4>
+      </li>
+       <li class="collection-header">
+        <h4>{{dept}}</h4>
+      </li>
+       <li class="collection-header">
+        <h4>{{position}}</h4>
+      </li>
+       <li class="collection-header">
         <h4>{{name}}</h4>
       </li>
     </ul>
@@ -9,12 +18,17 @@
 </template>
 
 <script>
-
+ import db from './firebaseInit'
   export default {
+   
+
     name:'View-employee',
     data() {
       return {
-
+          employee_id: null,
+          name: null,
+          dept: null,
+          position: null
       }
     },
     beforeRouteEnter(to,from,next){
